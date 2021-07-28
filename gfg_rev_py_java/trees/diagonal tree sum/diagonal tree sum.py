@@ -41,7 +41,7 @@ Note: The Input/Ouput format and Example given are used for system's internal pu
 link --> https://practice.geeksforgeeks.org/problems/diagonal-sum-in-binary-tree/1#
 """
 
-def digs(root,arr,i):
+def digs(root, arr, i):
     if root==None:
         return
     if i == len(arr):
