@@ -1,4 +1,4 @@
-"""
+/*"""
 Reverse a linked list 
 Easy Accuracy: 48.93% Submissions: 100k+ Points: 2
 Given a linked list of N nodes. The task is to reverse this list.
@@ -27,7 +27,7 @@ Constraints:
 1 <= N <= 104
 
 link --> https://practice.geeksforgeeks.org/problems/reverse-a-linked-list/1#
-"""
+"""*/
 
 class Solution
 {
@@ -49,3 +49,33 @@ class Solution
          
     }
 }
+
+class recursion {
+    static Node head; // head of list
+     
+    static class Node {
+        int data;
+        Node next;
+        Node(int d)
+        {
+            data = d;
+            next = null;
+        }
+    }
+ 
+    static Node reverse(Node head)
+    {
+        if (head == null || head.next == null)
+            return head;
+ 
+        /* reverse the rest list and put
+        the first element at the end */
+        Node cur = reverse(head.next);
+        head.next.next = head;
+  
+        /* tricky step -- see the diagram */
+        head.next = null;
+ 
+        /* fix the head pointer */
+        return cur;
+    }}

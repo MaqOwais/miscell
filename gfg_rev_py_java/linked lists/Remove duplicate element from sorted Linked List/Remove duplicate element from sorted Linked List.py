@@ -32,6 +32,9 @@ Constraints:
 link --> https://practice.geeksforgeeks.org/problems/remove-duplicate-element-from-sorted-linked-list/1#
 """
 
+
+# if u have nxt.data snippet then try to make cur.next in while statement as a cond'n
+
 def removeDuplicates(head):
     cur = head
     while cur.next:

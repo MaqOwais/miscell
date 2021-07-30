@@ -45,7 +45,7 @@ class Tree
     {
         Stack<Node> li = new Stack();
         Node cur = node;
-        int p= 0;
+        int p = 0;
         while (cur != null || ! li.empty()){
             if (cur != null){
                 li.add(cur);
@@ -62,7 +62,7 @@ class Tree
     }
 }
 
-"""better approach completely not correct"""
+"""better approach completely not correct (as it doesnt' cover all cases)"""
 
 
 class Tree

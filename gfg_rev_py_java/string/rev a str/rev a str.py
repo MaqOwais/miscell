@@ -33,3 +33,13 @@ def reverseWord(s):
         i += 1
         j -= 1
     return s
+
+def reverseWord(s):
+    return s[::-1]
+
+# time complexity O(n)
+def reverseWord(s):
+    st = ""
+    for i in range(len(s) - 1, -1, -1):
+        st += s[i]
+    return st

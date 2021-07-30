@@ -51,3 +51,22 @@ class Solution:
             cur = nxt
         head = pre
         return head
+
+
+# recursive approach (https://www.youtube.com/watch?v=MRe3UsRadKw&ab_channel=IDeserve)
+ 
+def reverse(self, head):
+ 
+    # If head is empty or has reached the list end
+    if head is None or head.next is None:
+        return head
+
+    # Reverse the rest list
+    cur = self.reverse(head.next)
+
+    # Put first element at the end
+    head.next.next = head
+    head.next = None
+
+    # Fix the header pointer
+    return cur
