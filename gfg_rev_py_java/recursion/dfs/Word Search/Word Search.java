@@ -40,6 +40,7 @@ Constraints:
 1 ≤ L ≤ N*M
 
 link --> https://practice.geeksforgeeks.org/problems/word-search/1#
+https://leetcode.com/problems/word-search/
 """
  */
 class Solution {
@@ -60,6 +61,7 @@ class Solution {
         
         char temp = board[r][c];
         board[r][c] = ' ';
+        // here the reason to remove the element is to make sure it doesnt' again consider this as a part.
         boolean found = (dfs(r + 1, c , cnt + 1, board, word) ||
                      dfs(r - 1, c , cnt + 1, board, word) ||
                     dfs(r, c + 1, cnt + 1, board, word) ||                    

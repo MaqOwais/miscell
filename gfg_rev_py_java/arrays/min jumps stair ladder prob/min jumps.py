@@ -41,6 +41,19 @@ link --> https://practice.geeksforgeeks.org/problems/minimum-number-of-jumps-158
 
 # for explanation see java
 
+# recusive soln. and brute force approach
+
+class Solution:
+    def minJ(self,arr, cur, Sum):
+        if cur >= len(arr) - 1: return Sum
+        if arr[cur] == 0: return -1
+        res = float('inf')
+        for i in range(1, arr[cur]+1):
+            res = min(res, self.minJ(arr, i + cur, Sum + 1))
+        return res
+    
+    def minJumps(self, arr, n):
+        return self.minJ(arr, 0, 0)
 
 class Solution:
     def minJumps(self, arr, n):

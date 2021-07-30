@@ -40,6 +40,25 @@ Constraints:
 link --> https://practice.geeksforgeeks.org/problems/minimum-number-of-jumps-1587115620/1#
 */
 
+// recusive soln. and brute force approach
+
+class Solution{
+    public static int minJumps1(int[] a, int currentIndex, int sum) {
+        if (currentIndex >= a.length - 1)
+            return sum;
+        if (a[currentIndex] == 0) return -1;
+
+        int res = Integer.MAX_VALUE;
+        for (int i = 1; i <= a[currentIndex]; i++) {
+            res = Math.min(res, minJumps1(a, i + currentIndex, sum + 1));
+        }
+        return res;
+    }
+    static int minJumps(int[] arr){
+        return minJumps1(arr, 0, 0);
+    }
+}
+
 
 class Solution{
     static int minJumps(int[] arr){
@@ -86,4 +105,4 @@ class Solution1{
             }
         }
         return jump;
-    }
+    }}

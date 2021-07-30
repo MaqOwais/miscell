@@ -62,7 +62,7 @@ class Solution{
         r.set(n - 1, arr[n - 1]);
         for (int i = 1; i < n; i++) l.set(i, Math.max(arr[i], l.get(i-1)) );
         for (int j = n - 2; j > 0; j--) r.set(j, Math.max(arr[j], r.get(j+1)) );
-        for (int j = 1; j < n - 1; j++) water += Math.min(l.get(j),r.get(j)) - arr[j];
+        for (int k = 1; k < n - 1; k++) water += Math.min(l.get(k), r.get(k)) - arr[k];
         return water;
     } 
 }
@@ -88,5 +88,3 @@ class Solution{
         return water;
     } 
 }
-
-

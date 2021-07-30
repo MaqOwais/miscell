@@ -55,6 +55,7 @@ class Solution:
 
             temp = board[r][c]
 		    board[r][c] = ""
+            # here the reason to remove the element is to make sure it doesnt' again consider this as a part.
             found = (dfs(r + 1, c, cnt + 1) or
                     dfs(r, c + 1, cnt + 1) or
                     dfs(r - 1, c, cnt + 1) or
@@ -69,7 +70,7 @@ class Solution:
         
         return 0 
 
-# similar soln.
+# similar soln. using set for storing intermediate and removing it
 class Solution:
 
     def isWordExist(self, board, word):
