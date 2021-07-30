@@ -44,17 +44,15 @@ def transitionPoint(arr, n):
             return i
     return -1
 
-"""using bst"""
+"""using bst takes O(log(n))"""
 
 def transitionPoint(arr, n):
     l = 0
     r = n - 1
-    if n==1 and arr[0] == 1: return 0
+    if arr[0] == 1: return 0
     while (l <= r):
         mid = (l + r) // 2 
-        if (arr[mid] == 1 and arr[mid-1] == 0) or \
-            (arr[mid] == 1 and mid == 0):
-                return mid
+        if (arr[mid] == 1 and arr[mid-1] == 0): return mid
         elif (arr[mid] == 0):
             l = mid + 1
         else:

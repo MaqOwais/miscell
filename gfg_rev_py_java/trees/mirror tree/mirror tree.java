@@ -71,6 +71,7 @@ class Solution {
         lis.add(node);
         while (!lis.isEmpty()){
             Node cur = lis.pop();
+            // swapping
             Node temp = cur.right;
             cur.right = cur.left;
             cur.left  = temp;

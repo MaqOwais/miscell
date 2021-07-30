@@ -60,6 +60,7 @@ def helper(root, k, li):
         if k == 0:
             li.append(root.data)
             return
+
         helper(root.left, k-1,li)
         helper(root.right, k-1,li)
         

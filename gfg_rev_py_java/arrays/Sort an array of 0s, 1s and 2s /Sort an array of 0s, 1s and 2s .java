@@ -40,7 +40,7 @@ Constraints:
 link--> https://practice.geeksforgeeks.org/problems/sort-an-array-of-0s-1s-and-2s4231/1
 """
 
-""" NOTE: if to get O(n) complexity for sorting algo them IMO u have to keep the no. of pointers equal to that particular diff elements"""
+""" NOTE: if to get O(n) complexity for THIS sorting algo them IMO u have to keep the no. of pointers equal to that particular diff elements"""
 
 
 class Solution

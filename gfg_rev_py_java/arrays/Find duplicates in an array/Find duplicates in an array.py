@@ -39,6 +39,8 @@ Constraints:
 
 
 """using hash approach"""
+# this could be done using hashset also but we've here make a condition if it comes 2nd time then we just add it to list not set..
+# // and this will be applicable if we want more than 2 freq.
 class Solution:
     def duplicates(self, arr, n): 
     	# code here
@@ -48,11 +50,10 @@ class Solution:
     	    hsh[arr[i]] = hsh.get(arr[i], 0) + 1
     	    if hsh[arr[i]] == 2:
     	        li.append(arr[i])
-    	return [-1] if len(li) == 0 else sorted(li)
-
-"""2ND APPROACH: this could be also done HAVING A FREQUENCY LIST which takes the extra O(n) space"""
+    	return [-1] if len(li) == 0 else sorted(li) # sorted is used to get sorted soln. as req.
 
 
+# takes extra O(n) as this uses the concept of coloring the index which is useful for retreiving in sorted order.
 class Solution:
     def duplicates(self, arr, n): 
     	# code here
@@ -67,3 +68,9 @@ class Solution:
     	if not len(lis):
     	    lis.append(-1)
         return lis
+
+"""
+NOTE:
+IF EXTRA SPACE(N) HAS GIVEN THEN THE SORTING COULD BE DONE IN O(N) COMPLEXITY
+BUT THE CONDITION IS THE ALL THE ELEMENTS SHOULD BE IN B/W O AND N.ELSE IT COULD TAKE MORE SPACE.
+"""

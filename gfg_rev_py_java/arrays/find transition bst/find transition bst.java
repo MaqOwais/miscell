@@ -32,7 +32,7 @@ Expected Auxiliary Space: O(1)
 
 Constraints:
 1 ≤ N ≤ 500000
-0 ≤ arr[i] ≤ 1
+0 ≤ arr[i] ≤ 1 
 
 link --> https://practice.geeksforgeeks.org/problems/find-transition-point-1587115620/1#
 """
@@ -49,21 +49,20 @@ class GfG {
         return -1;
     }}
 
-"""using bst"""
+"""using bst takes O(log(n))"""
 
 
 class GfG {
     int transitionPoint(int arr[], int n) {
         int l = 0;
         int r = n - 1;
-        if (n==1 && arr[0] == 1) return 0;
+        if (arr[0] == 1) return 0;
         while (l <= r){
             int mid =  (l + r)/ 2;
-            if ((  mid == 0 && arr[mid] == 1)|| (arr[mid] == 1 && arr[mid-1] == 0)) 
-            return mid;
+            if (arr[mid] == 1 && arr[mid-1] == 0) return mid;
             else if (arr[mid] == 0) l = mid + 1;
             else r = mid - 1;
-            
+
         }
         return -1;
     }}

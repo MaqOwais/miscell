@@ -1,3 +1,4 @@
+/*
 """Diagonal Sum In Binary Tree 
 Easy Accuracy: 51.18% Submissions: 14831 Points: 2
 Consider Red lines of slope -1 passing between nodes (in following diagram). The diagonal sum in a binary tree is the sum of all node’s data lying between these lines. Given a Binary Tree of size N, print all diagonal sums.
@@ -40,7 +41,7 @@ Note: The Input/Ouput format and Example given are used for system's internal pu
 
 link --> https://practice.geeksforgeeks.org/problems/diagonal-sum-in-binary-tree/1#
 """
-
+*/
 
 """using recursion and list DS"""
 class Tree {
@@ -73,8 +74,14 @@ class Tree {
 }
 
 
-"""using stack problem"""
+/*"""using stack problem (specifically QUEUE) 
 
+keeping track of 
+1. size of stack then decrementing it after (3) step.
+2. left sub-tree...
+3. iterate through right-subtree
+4. finally appending if left subtree comes out during (3) step.
+"""*/
 class Tree {
     public static ArrayList <Integer> diagonalSum(Node root) 
     {
@@ -87,6 +94,9 @@ class Tree {
             int p = 0;
             while (size > 0){
                 Node temp = st.remove(0);
+                // SORT OF QUEUE OPERATION
+                // In stack --> pop used to remove last element(lifo) but here we want fifo here so we use remove
+                //  (whereas, peek is used to just see the elements at last...)
                 while (temp != null){
                     p += temp.data;
                     if (temp.left != null) st.add(temp.left);
@@ -97,4 +107,4 @@ class Tree {
             ans.add(p);
         }
         return ans;
-    }
+    }}

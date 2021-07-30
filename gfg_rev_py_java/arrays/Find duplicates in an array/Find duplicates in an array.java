@@ -38,8 +38,9 @@ link --> https://practice.geeksforgeeks.org/problems/find-duplicates-in-an-array
 """NAIVE APPROACH: this could be also done by sorting first then CHECK with arr[i] == arr[i+1]"""
 
 
-"""using hash approach"""
-
+"""using hash approach (O(n) space)"""
+// this could be done using hashset also but we've here make a condition if it comes 2nd time then we just add it to list not set..
+// and this will be applicable if we want more than 2 freq.
 class Solution {
     public static ArrayList<Integer> duplicates(int arr[], int n) {
         HashMap<Integer, Integer> hsh = new HashMap<>();
@@ -61,13 +62,13 @@ class Solution {
         if (lis.isEmpty()){
             lis.add(-1);
         }
-        Collections.sort(lis);
+        Collections.sort(lis); //# sorted is used to get sorted soln. as req.
         return lis;
         
     }
 }
 
-"""2ND APPROACH: this could be also done HAVING A FREQUENCY LIST which takes the extra O(n) space"""
+// # takes extra O(n) as this uses the concept of coloring the index which is useful for retreiving in sorted order.
 
 class Solution {
     public static ArrayList<Integer> duplicates(int arr[], int n) {
@@ -95,3 +96,11 @@ class Solution {
         
     }
 }
+
+/*
+
+NOTE:
+IF EXTRA SPACE(N) HAS GIVEN THEN THE SORTING COULD BE DONE IN O(N) COMPLEXITY
+BUT THE CONDITION IS THE ALL THE ELEMENTS SHOULD BE IN B/W O AND N.ELSE IT COULD TAKE MORE SPACE.
+
+*/

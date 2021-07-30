@@ -41,15 +41,16 @@ Note: The Input/Ouput format and Example given are used for system's internal pu
 link --> https://practice.geeksforgeeks.org/problems/diagonal-sum-in-binary-tree/1#
 """
 
-def digs(root, arr, i):
-    if root==None:
-        return
-    if i == len(arr):
-        arr.append(root.data)
-    else:
-        arr[i] += root.data
-    digs(root.left, arr, i+1)
-    digs(root.right, arr, i)
+
+def digs(root, arr, row):
+    if root:
+        if row == len(arr):
+            arr.append(root.data)
+        else:
+            arr[row] += root.data
+        digs(root.left, arr, row + 1)
+        digs(root.right, arr, row)
+
 #Complete the function below
 def diagonalSum(root):
     #:param root: root of the given tree.
@@ -57,17 +58,23 @@ def diagonalSum(root):
     digs(root, arr, 0)
     return arr
 
-"""using stack problem"""
+"""using stack(specifically QUEUE) problem
+
+keeping track of 
+1. size of stack then decrementing it after (3) step.
+2. left sub-tree...
+3. iterate through right-subtree
+4. finally appending if left subtree comes out during (3) step.
+"""
 def diagonalSum(root):
-    st = []
-    st.append(root)
+    st = [root]
+
     ans = []
     while True:
         size = len(st)
-        if size == 0:
-            break
+        if size == 0: break
         p = 0
-        while size>0:
+        while size:
             temp = st[0]
             del st[0]
             while temp:

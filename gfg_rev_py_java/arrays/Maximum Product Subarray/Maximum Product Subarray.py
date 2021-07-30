@@ -44,10 +44,7 @@ class Solution:
 		for i in range(1,n):
 		    if a[i] < 0:
 		        mn, mx = mx, mn
-		    if a[i] == 0:
-		        mn, mx = 1, 1
-		    else:
-    		    mx = max(a[i], mx*a[i])
-    		    mn = min(a[i], mn*a[i])
-		    mP = max(mx, mP)
+			mx = max(a[i], mx*a[i])
+			mn = min(a[i], mn*a[i])
+			mP = max(mx, mP)
 	    return mP
