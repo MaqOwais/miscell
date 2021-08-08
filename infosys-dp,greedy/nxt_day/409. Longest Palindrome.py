@@ -37,6 +37,8 @@ link --> https://leetcode.com/problems/longest-palindrome/
 
 """
 
+
+# some times we have to think in a numerical way...as this one
 class Solution:
     def longestPalindrome(self, s: str) -> int:
         if not s: return 0
