@@ -1,7 +1,7 @@
 /* """
 Word Search 
 Medium Accuracy: 50.15% Submissions: 4873 Points: 4
-Given a 2D board of letters and a word. Check if the word exists in the board. The word can be constructed from letters of adjacent cells only. ie - horizontal or vertical neighbors. The same letter cell can not be used more than once.
+Given a 2D board of letters and a word. Check if the word exists in the board. The word can be constructed from letters of nodeacent cells only. ie - horizontal or vertical neighbors. The same letter cell can not be used more than once.
  
 
 Example 1:
