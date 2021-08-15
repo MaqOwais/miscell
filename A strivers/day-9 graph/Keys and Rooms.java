@@ -58,7 +58,7 @@ class Solution {
         Arrays.fill(v, false);
         v[0] = true;
         int cnt = 1;
-
+        // bfs
         Queue<List<Integer>> q = new LinkedList();
         q.add(rooms.get(0));
         while (! q.isEmpty()){
