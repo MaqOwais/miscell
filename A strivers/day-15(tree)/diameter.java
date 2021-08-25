@@ -60,7 +60,7 @@ class Solution {
         if (root == null) return 0;
             int[] ans = new int[1];
             height(root, ans);
-            return ans[0] - 1;
+            return ans[0] - 1; // since we need edges b/w them hence '-1'
     }
     public int height(TreeNode root, int[] ans){
         if(root == null) return 0;
